@@ -7,8 +7,7 @@
         </q-btn>
 
         <q-toolbar-title>
-          Quasar App
-          <div slot="subtitle">Running on Quasar v{{ $q.version }}</div>
+          {{$route.name}}
         </q-toolbar-title>
       </q-toolbar>
     </q-layout-header>
@@ -16,6 +15,10 @@
     <q-layout-drawer v-model="leftDrawerOpen" :content-class="$q.theme === 'mat' ? 'bg-grey-2' : null">
       <q-list no-border link inset-delimiter>
         <q-list-header>Acesso rápido</q-list-header>
+        <q-item to="/">
+          <q-item-side icon="school" />
+          <q-item-main label="Início" />
+        </q-item>
         <q-item to="Requisicao">
           <q-item-side icon="school" />
           <q-item-main label="Requisição" sublabel="quasar-framework.org" />

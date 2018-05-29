@@ -1,7 +1,7 @@
 <template>
   <q-page padding class="print-hide">
-    <q-btn color="primary" @click="print()" label="Close" />
-    <q-field label="Exmo. Sr" :label-width="4">
+    <q-btn color="primary" icon="print" class="absolute-top-right" @click="print()" label="Imprimir" />
+    <q-field label="Exmo. Sr(a)" :label-width="4">
       <q-input v-model="diretor_nome" value='' />
     </q-field>
     <q-field label="Diretor da Faculdade de" :label-width="4">
@@ -30,11 +30,11 @@
         />
       </q-search>
     </q-field>
-    <q-field label="Respeitosamente requer" :label-width="4">
+    <q-field label="Respeitosamente requer" :label-width="4" :count="1122">
       <q-input v-model="requerimento" value='' type="textarea" />
     </q-field>
-    <q-field label="Recebi um requerimento do(a) Sr.(a)" :label-width="4" :count="1122">
-      <q-input v-model="recebi_de" value='' type="textarea" />
+    <q-field label="Recebi um requerimento do(a) Sr.(a)" :label-width="4">
+      <q-input v-model="recebi_de" value=''/>
     </q-field>
     <q-field icon="access_time" label="Meeting time" helper="Pick a date" :label-width="4">
       <q-datetime format="DD/MM/YYYY" v-model="data_assinatura" type="date" color="secondary" float-label="Datetime" />
@@ -71,7 +71,7 @@
                   <span class="text-weight-bold">Nestes termos</span>
                 </p>
                 <p><span class="text-weight-bold">P. Deferimento</span></p>
-                <p class="margin-bottom-30"><span class="text-weight-bold">Dourados, 25 de maio de 2018</span></p>
+                <p class="margin-bottom-30"><span class="text-weight-bold">{{fullDate()}}</span></p>
                 <hr class="signature">
                 <p><span class="text-weight-bold ">ASSINATURA DO ALUNO(A)</span></p>
               </div>
@@ -101,11 +101,14 @@
 
 <script>
 import cursos from 'assets/list/cursos.json'
+import month from 'assets/list/month.json'
+
 console.log(cursos)
 export default {
   data () {
     return {
       list_cursos: cursos,
+      list_month: month,
       diretor_nome: '',
       diretor_curso: '',
       protocolo_n: '',
@@ -122,9 +125,11 @@ export default {
     }
   },
   methods: {
+    fullDate () {
+      const date = new Date()
+      return `Dourados, ${date.getDate()} de ${this.list_month[date.getMonth()]} de ${date.getFullYear()}`
+    },
     print () {
-      console.log(this.data_retirada)
-      console.log(this.lang)
       const self = this
       self.maximizedModal = true
       setTimeout(function () {
