@@ -1,6 +1,7 @@
 <template>
   <q-page padding class="print-hide">
     <q-btn color="primary" icon="print" class="absolute-top-right" @click="print()" label="Imprimir" />
+    <q-btn color="warning" icon="clear" class="absolute-top-left" @click="clear()" label="Limpar" />
     <q-field label="Exmo. Sr(a)" :label-width="4">
       <q-input v-model="diretor_nome" value='' />
     </q-field>
@@ -20,10 +21,14 @@
     <q-field label="RGM" :label-width="4">
       <q-input v-model="rgm" value='' />
     </q-field>
-    <q-field v-model="aluno_ano_letivo" label="Aluno(a) Matriculado(a) no" :label-width="4">
-      <q-input value='' />
+    <q-field label="aluno(a) matriculado(a) no " :label-width="4">
+      <q-search color="secondary" v-model="aluno_ano_letivo">
+        <q-autocomplete
+          :static-data="{field: 'value', list: list_semestre}"
+        />
+      </q-search>
     </q-field>
-    <q-field label="Diretor da Faculdade de" :label-width="4">
+    <q-field label="letivo do curso de" :label-width="4">
       <q-search color="secondary" v-model="aluno_curso">
         <q-autocomplete
           :static-data="{field: 'value', list: list_cursos}"
@@ -35,12 +40,6 @@
     </q-field>
     <q-field label="Recebi um requerimento do(a) Sr.(a)" :label-width="4">
       <q-input v-model="recebi_de" value=''/>
-    </q-field>
-    <q-field icon="access_time" label="Meeting time" helper="Pick a date" :label-width="4">
-      <q-datetime format="DD/MM/YYYY" v-model="data_assinatura" type="date" color="secondary" float-label="Datetime" />
-    </q-field>
-    <q-field icon="access_time" label="Meeting time" helper="Pick a date" :label-width="4">
-      <q-datetime format="DD/MM/YYYY" v-model="data_retirada" type="date" color="secondary" float-label="Datetime" />
     </q-field>
     <q-modal v-model="maximizedModal" maximized :content-css="{padding: '50px'}">
       <div class="doc-container page">
@@ -71,7 +70,7 @@
                   <span class="text-weight-bold">Nestes termos</span>
                 </p>
                 <p><span class="text-weight-bold">P. Deferimento</span></p>
-                <p class="margin-bottom-30"><span class="text-weight-bold">{{fullDate()}}</span></p>
+                <p class="margin-bottom-30"><span class="text-weight-bold">{{fullDate(1)}}</span></p>
                 <hr class="signature">
                 <p><span class="text-weight-bold ">ASSINATURA DO ALUNO(A)</span></p>
               </div>
@@ -79,7 +78,7 @@
             <div>
               <hr class="divider">
               <div class="thirt-text">
-                <div class="margin-bottom-10"><span class="text-weight-bold">Recebi um requerimento do(a) Sr.(a) </span>{{aluno_nome}}</div>
+                <div class="margin-bottom-10"><span class="text-weight-bold">Recebi um requerimento do(a) Sr.(a) </span>{{recebi_de}}</div>
                 <div class="margin-bottom-10"><span class="text-weight-bold">Protocolo Nº. </span>{{protocolo_n}}</div>
                 <p><span class="q-body-2"><span class="text-weight-bold">ATENÇÃO:</span> O documento requerido deverá ser retirado do guichê de informações no dia 25/05/2018</span></p>
                 <div class="row items-center">
@@ -88,7 +87,7 @@
                     <p><span class="text-weight-bold ">Responsável</span></p>
                   </div>
                   <div class="col padding-left-200">
-                    Data 25/05/2018
+                    {{fullDate(2)}}
                   </div>
                </div>
               </div>
@@ -100,6 +99,7 @@
 </template>
 
 <script>
+import semestre from 'assets/list/semestre.json'
 import cursos from 'assets/list/cursos.json'
 import month from 'assets/list/month.json'
 
@@ -107,6 +107,7 @@ console.log(cursos)
 export default {
   data () {
     return {
+      list_semestre: semestre,
       list_cursos: cursos,
       list_month: month,
       diretor_nome: '',
@@ -117,17 +118,25 @@ export default {
       aluno_ano_letivo: '',
       aluno_curso: '',
       requerimento: '',
-      hoje: Date.now(),
       recebi_de: '',
-      data_assinatura: '',
-      data_retirada: Date.now(),
       maximizedModal: false
     }
   },
   methods: {
-    fullDate () {
+    clear () {
+      this.diretor_nome = ''
+      this.diretor_curso = ''
+      this.protocolo_n = ''
+      this.aluno_nome = ''
+      this.rgm = ''
+      this.aluno_ano_letivo = ''
+      this.aluno_curso = ''
+      this.requerimento = ''
+      this.recebi_de = ''
+    },
+    fullDate (type) {
       const date = new Date()
-      return `Dourados, ${date.getDate()} de ${this.list_month[date.getMonth()]} de ${date.getFullYear()}`
+      return type === 1 ? `Dourados, ${date.getDate()} de ${this.list_month[date.getMonth()]} de ${date.getFullYear()}` : `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`
     },
     print () {
       const self = this
