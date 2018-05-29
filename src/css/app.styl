@@ -1,0 +1,111 @@
+.margin-bottom-0{
+    margin-bottom: 0px;
+}
+
+.text-aling-center{
+  text-align: center;
+}
+
+.padding-left-200{
+    padding-left: 200px;
+}
+.font-size{
+  font-size: 18px;
+}
+
+.margin-bottom-10{
+  margin-bottom: 10px;
+}
+
+.margin-bottom-30{
+  margin-bottom: 30px;
+}
+
+.page {
+  width: 210mm;
+  min-height: 297mm;
+  padding: 20mm;
+  margin: 10mm auto;
+  border: 1px #D3D3D3 solid;
+  border-radius: 5px;
+  background: white;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.bold {
+    font-weight: bold!important;
+}
+
+.inline {
+  display: inline-block; 
+}
+
+.second-text{
+  width:50%;
+}
+
+.signature{
+  margin-top:10px;
+}
+
+.thirt-text{
+  border: 1px #D3D3D3 solid;
+  border-radius: 5px;
+  background: white;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  padding-top: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+}
+
+@media print {
+  @page { 
+    width: 210mm;
+    min-height: 297mm;
+    padding: 20mm;
+    margin: 0mm 6mm;
+}
+
+  .page{
+    width: auto;
+    padding: 0 0 0 0;
+    margin: 0 0 0 0;
+    border: none;
+    border-radius: none;
+    box-shadow: none;
+    min-height: auto;
+  }
+  #btn_print{
+    display:none;
+  }
+}
+
+.end{
+  position: absolute;
+  bottom: 20px;
+  left: 30px;
+}
+
+.end > .right-text {
+    position: absolute;
+    bottom: 350px;
+    right: 0px;
+    width: 75%;
+}
+
+.divider {
+  margin-bottom: 75px;
+  border: none;
+  border-top: 2px dotted #000;
+  color: #fff;
+  background-color: #fff;
+  height: 0.5px;
+}
+
+.end > .border{
+  padding: 1em;
+  border: 4px solid black;
+  border-radius: 20px;
+  width: 100%;
+}
