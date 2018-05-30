@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.2.0/workbox-sw.js");
 
 importScripts(
-  "/precache-manifest.34a1d40095499a5be3a97c245ae8aa04.js"
+  "/precache-manifest.5e5dab23cc7487b108c26c0f8e3f9f54.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "unigranet"});

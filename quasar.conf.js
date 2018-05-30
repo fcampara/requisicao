@@ -78,12 +78,12 @@ module.exports = function (ctx) {
       // workboxPluginMode: 'InjectManifest',
       // workboxOptions: {},
       manifest: {
-        // name: 'Unigranet App',
-        // short_name: 'Quasar-PWA',
-        // description: 'Best PWA App in town!',
-        display: 'standalone',
-        orientation: 'portrait',
-        background_color: '#ffffff',
+        name: 'Unigranet App',
+        short_name: 'Quasar-PWA',
+        description: 'Best PWA App in town!',
+        display: 'fullscreen',
+        orientation: 'any',
+        background_color: '#000000',
         theme_color: '#027be3',
         icons: [
           {
