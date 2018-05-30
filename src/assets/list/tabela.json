@@ -1,0 +1,14 @@
+[
+    {"label": "Atestado de conclusão",                               "inset": true, "value": "1", "stamp": "R$ 10,00"},
+    {"label": "Certidão de estudo",                                  "inset": true, "value": "2", "stamp": "R$ 10,00"},
+    {"label": "Declaração de guia de transfêrencia externa - outra", "inset": true, "value": "3", "stamp": "R$ 10,00"},
+    {"label": "Declaração de matrícula trancada",                    "inset": true, "value": "4", "stamp": "R$ 10,00"},
+    {"label": "Declaração de pontuação do vestibular",               "inset": true, "value": "5", "stamp": "R$ 10,00"},
+    {"label": "Declaração de tramitação do diploma",                 "inset": true, "value": "6", "stamp": "R$ 10,00"},
+    {"label": "Declaração de vínculo",                               "inset": true, "value": "7", "stamp": "R$ 10,00"},
+    {"label": "Declaração de vínculo (digital)",                     "inset": true, "value": "8", "stamp": "R$ 10,00"},
+    {"label": "Grade curricular",                                    "inset": true, "value": "9", "stamp": "R$ 10,00"},
+    {"label": "Histórico escolar",                                   "inset": true, "value": "10", "stamp": "R$ 25,00"},
+    {"label": "Programas - ementas (disciplina)",                    "inset": true, "value": "11", "stamp": "R$ 3,00"},
+    {"label": "Sistema de Avaliação",                                "inset": true, "value": "12", "stamp": "R$ 0,00"}
+]
