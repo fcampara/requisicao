@@ -1,13 +1,13 @@
 {
-  "name": "unigranet",
+  "name": "requisicao",
   "version": "1.0.0",
-  "description": "Unigran Net ",
-  "productName": "Unigran Net",
+  "description": "Requisição",
+  "productName": "Requisição",
   "cordovaId": "org.cordova.quasar.app",
   "author": "Felipebr26 <fcamparasilva@gmail.com>",
   "private": true,
   "scripts": {
-    "build": "quasar build -m pwa", 
+    "build": "quasar build -m pwa",
     "start": "node server.js",
     "heroku-postbuild": "npm install --only=dev --no-shrinkwrap && npm run build",
     "lint": "eslint --ext .js,.vue src",

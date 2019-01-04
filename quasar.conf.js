@@ -11,7 +11,7 @@ module.exports = function (ctx) {
     extras: [
       ctx.theme.mat ? 'roboto-font' : null,
       'material-icons',
-      ctx.theme.ios ? 'ionicons' : null,
+      ctx.theme.ios ? 'ionicons' : null
       // 'mdi',
       // 'fontawesome'
     ],
@@ -78,40 +78,14 @@ module.exports = function (ctx) {
       // workboxPluginMode: 'InjectManifest',
       // workboxOptions: {},
       manifest: {
-        name: 'Unigranet App',
+        name: 'Requisição App',
         short_name: 'Quasar-PWA',
         description: 'Best PWA App in town!',
         display: 'fullscreen',
         orientation: 'any',
         background_color: '#000000',
         theme_color: '#027be3',
-        icons: [
-          {
-            'src': 'statics/icons/128x128.png',
-            'sizes': '128x128',
-            'type': 'image/png'
-          },
-          {
-            'src': 'statics/icons/192x192.png',
-            'sizes': '192x192',
-            'type': 'image/png'
-          },
-          {
-            'src': 'statics/icons/256x256.png',
-            'sizes': '256x256',
-            'type': 'image/png'
-          },
-          {
-            'src': 'statics/icons/384x384.png',
-            'sizes': '384x384',
-            'type': 'image/png'
-          },
-          {
-            'src': 'statics/icons/512x512.png',
-            'sizes': '512x512',
-            'type': 'image/png'
-          }
-        ]
+        icons: []
       }
     },
     cordova: {

@@ -48,7 +48,7 @@
       <div class="doc-container page">
         <div class="column">
           <div class="col-auto flex flex-center">
-            <img alt="Quasar logo" height="79" width="150" src="~assets/unigranet.png">
+            <img alt="Quasar logo" height="79" width="150" src="~assets/quasar-logo-full.svg">
             <h6 style="margin-top: 0px;" class="text-weight-bold">
               Centro Universitário da Grande de Dourados - Ensino a distância
             </h6>
